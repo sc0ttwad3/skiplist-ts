@@ -13,7 +13,7 @@ describe('create SkipList', () => {
   })
 
   //
-  it('should exist', () => {
+  it('should be a valid instance', () => {
     expect(list).toBeInstanceOf(SkipList);
     expect(list.head).toBeNull();
     expect(list.tail).toBeNull();
