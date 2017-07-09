@@ -5,9 +5,13 @@
   "main": "index.js",
   "module": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "shx rm -rf ./lib",
+    "lint": "tslint src/**/*.ts",
+    "compile": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json -watch",
+    "test": "jest"
   },
-  "keywords": [],
+  "keywords": ["skiplist", "typescript", "data-structure"],
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
   "license": "MIT",
   "devDependencies": {
@@ -18,5 +22,18 @@
     "shx": "^0.2.2",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }
