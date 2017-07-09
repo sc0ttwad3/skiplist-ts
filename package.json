@@ -11,7 +11,11 @@
     "watch": "tsc -p tsconfig.json -watch",
     "test": "jest"
   },
-  "keywords": ["skiplist", "typescript", "data-structure"],
+  "keywords": [
+    "skiplist",
+    "typescript",
+    "data-structure"
+  ],
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
   "license": "MIT",
   "devDependencies": {
@@ -20,6 +24,7 @@
     "chalk": "^2.0.1",
     "jest": "^20.0.4",
     "shx": "^0.2.2",
+    "ts-jest": "^20.0.7",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
   },
