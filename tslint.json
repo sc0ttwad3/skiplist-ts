@@ -1,0 +1,31 @@
+{
+  "extends": [
+    // "tslint:latest"
+  ],
+  "defaultSeverity": "warning",
+  "jsRules:": {},
+  "rules": {
+    "no-constant-condition": false,
+    "quotemark": [
+      false
+    ],
+    "one-line": [
+      false
+    ],
+    "no-trailing-whitespace": false,
+    "no-irregular-whitespace": false,
+    "semicolon": [
+      false
+    ],
+    "space-before-function-paren": false,
+    "only-arrow-functions": [
+      false
+    ],
+    "no-console": [
+      false
+    ]
+  },
+  "rulesDirectory": [
+
+  ]
+}

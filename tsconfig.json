@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",   // Node module
+    "target": "ESNEXT",
+    "noImplicitAny": false,
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".", // required for "paths"
+    "paths": {
+      "*": [
+        "*",
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "scratch",
+    "docs",
+    "src/**/*.test.*"
+  ]
+}

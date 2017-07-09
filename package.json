@@ -1,0 +1,22 @@
+{
+  "name": "skiplist-ts",
+  "version": "0.0.1",
+  "description": "A fast SkipList with advanced features implemented in Typescript",
+  "main": "index.js",
+  "module": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.9",
+    "chalk": "^2.0.1",
+    "jest": "^20.0.4",
+    "shx": "^0.2.2",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
+  }
+}
