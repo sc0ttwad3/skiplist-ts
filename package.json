@@ -1,9 +1,9 @@
 {
   "name": "skiplist-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A fast SkipList with advanced features implemented in Typescript",
   "main": "index.js",
-  "module": "./lib/index.js",
+  "module": "index.js",
   "scripts": {
     "clean": "shx rm -rf ./lib",
     "lint": "tslint src/**/*.ts",

@@ -1,6 +1,6 @@
 {
   "extends": [
-    // "tslint:latest"
+    "tslint:latest"
   ],
   "defaultSeverity": "warning",
   "jsRules:": {},
