@@ -53,6 +53,87 @@ export default class SkipList {
       this.head.next[i] = this.tail;
     }
     this.numNodes = 2;  // head/tail sentinels
+
   }
 
+  add(key: number, value: any): boolean {
+    const topLevel: number = this._randomLevel(1, this.maxLevels);
+    const priors: Node[] = new Array(this.maxLevels + 1);
+    const afters: Node[] = new Array(this.maxLevels + 1);
+
+    while (true) {
+      const lFound: number = this.find(key, priors, afters);
+      if (lFound !== -1) { break; }
+      let prior: Node;
+      let after: Node;
+      let valid: boolean = true;
+      let level: number = 0;
+      for (; valid && (level <= topLevel); level++) {
+        prior = priors[level];
+        after = afters[level];
+        prior.next[level] === after ? valid = true : valid = false;
+      }
+      if (!valid) { return false; }
+
+      const newNode: Node = new Node(key, value, topLevel);
+      level = 0;
+      for (; level <= topLevel; level++) {
+        newNode.next[level] = afters[level];
+      }
+      level = 0;
+      for (; level <= topLevel; level++) {
+        priors[level].next[level] = newNode;
+      }
+      this.numNodes++;
+      return true;
+    }
+  }
+
+  find(key: number, priors: Node[] = [], afters: Node[] = []): number {
+    let lFound: number = -1;
+    let prior: Node = this.head;
+    let level: number = this.maxLevels;
+    for (; level >= 0; level--) {
+      let current: Node = prior.next[level];
+      while (current.key < key) {
+        prior = current;
+        current = prior.next[level];
+      }
+      if (key === current.key && lFound === -1) {
+        lFound = level;
+      }
+      priors[level] = prior;
+      afters[level] = current;
+    }
+    return lFound;
+  }
+
+  clear() {
+    this.head = new Node(
+      Number.MIN_SAFE_INTEGER,
+      Number.MIN_SAFE_INTEGER,
+      this.maxLevels,
+    );
+    this.tail = new Node(
+      Number.MAX_SAFE_INTEGER,
+      Number.MAX_SAFE_INTEGER,
+      this.maxLevels,
+    );
+
+    let i: number = 0;
+    for (; i <= SkipList.MAX_LEVEL; i++) {
+      this.head.next[i] = this.tail;
+    }
+    this.numNodes = 2;  // head/tail sentinels
+  }
+
+  get size(): number {
+    return this.numNodes - 2;
+  }
+
+  //
+  //
+  private _randomLevel(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 }
