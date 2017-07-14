@@ -108,6 +108,25 @@ export default class SkipList {
     return lFound;
   }
 
+  remove(key: number): boolean {
+    const bottomLevel: number = 0;
+    const priors: Node[] = new Array(this.maxLevels + 1);
+    const afters: Node[] = new Array(this.maxLevels + 1);
+
+    while (true) {
+      const found: number = this.find(key, priors, afters);
+      if (found === -1) { return false; }
+      const victim: Node = afters[found];
+      let level = victim.topLevel;
+      for (; level >= bottomLevel; level--) {
+        afters[level] = victim.next[level];
+        priors[level].next[level] = afters[level];
+      }
+      this.numNodes--;
+      return true;
+    }
+  }
+
   clear() {
     this.head = new Node(
       Number.MIN_SAFE_INTEGER,
@@ -128,6 +147,7 @@ export default class SkipList {
   }
 
   get size(): number {
+    // Sentinel nodes not included
     return this.numNodes - 2;
   }
 

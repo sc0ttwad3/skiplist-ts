@@ -32,7 +32,7 @@ describe('create SkipList', () => {
     expect(list.tail.key).toEqual(Number.MAX_SAFE_INTEGER);
   });
 
-  it('add nodes maintain correct size property', () => {
+  it('add nodes verify and maintain correct size property', () => {
     list.add(10, 'Ammie');
     list.add(-73, 'Caine');
     list.add(8, 'Becky');
@@ -42,6 +42,43 @@ describe('create SkipList', () => {
     list.add(0, 'Zedd');
     list.add(448, 'Patty');
     expect(list.size).toEqual(8)
+
+    // Improve with order verification of nodes
+
+  });
+
+  it('find nodes return levelNum/-1 when non-existent', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+    expect(list.find(8)).toBeGreaterThan(0);
+    expect(list.find(24)).toEqual(-1);
+
+    // Improve with better return found functionality?
+
+  });
+
+  it('remove nodes return true/false when non-existent', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+    expect(list.remove(8)).toBeTruthy();
+    expect(list.remove(24)).toBeFalsy();
+  });
+
+  it('can clear out all nodes', () => {
+    list.add(10, 'Ammie');
+    list.add(-73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(-610, 'Carrie');
+    list.add(2112, 'Dan');
+    list.add(137, 'Earl');
+    list.add(0, 'Zedd');
+    list.add(448, 'Patty');
+    list.clear();
+    expect(list.size).toEqual(0);
   });
 
 });
