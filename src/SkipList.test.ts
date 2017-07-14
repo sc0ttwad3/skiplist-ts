@@ -81,4 +81,14 @@ describe('create SkipList', () => {
     expect(list.size).toEqual(0);
   });
 
+  it('is iterable - can (for..of)', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+
+    const isIterable = (obj) => obj != null && typeof obj[Symbol.iterator] === 'function'
+    expect(isIterable(list)).toBeTruthy();
+  })
+
 });
