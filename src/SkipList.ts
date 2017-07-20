@@ -1,3 +1,4 @@
+import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt} from './common';
 
 /* existy(x) - define the existence of something and not null or undefined */
 export const existy  = (x: any): boolean => x != null;
