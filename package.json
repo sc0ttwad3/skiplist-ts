@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "shx rm -rf ./lib",
     "lint": "tslint src/**/*.ts",
-    "compile": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "watch": "tsc -p tsconfig.json -watch",
     "test": "jest"
   },
@@ -19,14 +19,14 @@
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^20.0.2",
-    "@types/node": "^8.0.9",
+    "@types/jest": "^20.0.4",
+    "@types/node": "^8.0.14",
     "chalk": "^2.0.1",
     "jest": "^20.0.4",
     "shx": "^0.2.2",
     "ts-jest": "^20.0.7",
     "tslint": "^5.5.0",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.2"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
