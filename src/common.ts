@@ -1,19 +1,19 @@
 /* Generic comparison associated types */
 
 // interface IEqualsFunction<T>
-type Comparator<A> = (a: A, b: A) => boolean;
+export type Comparator<A> = (a: A, b: A) => boolean;
 // interface ICompareFunction<T>
-type Comparison<A> = (a: A, b: A) => number;
-type Compare = <A>(test: Comparator<A>) => Comparison<A>;
+export type Comparison<A> = (a: A, b: A) => number;
+export type Compare = <A>(test: Comparator<A>) => Comparison<A>;
 
-const compare: Compare = (test) => (a, b) =>
+export const compare: Compare = (test) => (a, b) =>
     test(a, b) ? -1
   : test(b, a) ?  1
   : 0;
 
 //
-const isFunc = (f: any): boolean => (typeof f) === 'function'
-const isUndef = (o: any): boolean => (typeof o) === 'undefined'
+export const isFunc = (f: any): boolean => (typeof f) === 'function'
+export const isUndef = (o: any): boolean => (typeof o) === 'undefined'
 
 export function isString(obj: any): boolean {
   return Object.prototype.toString.call(obj) === '[object String]';
@@ -21,8 +21,8 @@ export function isString(obj: any): boolean {
 
 //
 // function defaultCompare<T>(a: T, b: T): number
-const gt: Comparator<number> = (a, b) => b > a;
-const lt: Comparator<number> = (a, b) => b < a;
+export const gt: Comparator<number> = (a, b) => b > a;
+export const lt: Comparator<number> = (a, b) => b < a;
 
-const sortAsc  = compare(gt);
-const sortDesc = compare(lt);
+export const sortNumAsc  = compare(gt);
+export const sortNumDesc = compare(lt);
