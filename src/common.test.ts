@@ -1,5 +1,5 @@
 import {} from 'jest';
-import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt, reverse} from './common';
+import {Comparator, Compare, Comparison, eq, gt, isFunc, isString, isUndef, lt, reverse} from './common';
 import {logBase, Node, SkipList} from './SkipList';
 
 describe('verify common types and functions', () => {
@@ -32,19 +32,24 @@ describe('verify common types and functions', () => {
     expect(isString(['a', 'b', 'c'])).toBeFalsy();
   })
 
-  it('gt: Comparator<number> function', () => {
+  it('gt: Comparator<number> greater than function', () => {
     expect(gt(1, 2)).toBeTruthy();
     expect(gt(2, 1)).toBeFalsy();
     expect(gt(2, 2)).toBeFalsy();
   })
 
-  it('lt: Comparator<number> function', () => {
+  it('lt: Comparator<number> less than function', () => {
     expect(lt(2, 1)).toBeTruthy();
     expect(lt(1, 2)).toBeFalsy();
     expect(lt(2, 2)).toBeFalsy();
   })
 
-  it('can reverse items in array', () => {
+  it('eq: Comparator<number> equality function', () => {
+      expect(eq(3, 3)).toBeTruthy();
+      expect(eq(3, 5)).toBeFalsy();
+  })
+
+  it('can reverse items<T> in an array ', () => {
     list.add(10, 'Ammie');
     list.add(-73, 'Caine');
     list.add(8, 'Becky');

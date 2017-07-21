@@ -23,6 +23,7 @@ export function isString(obj: any): boolean {
 // function defaultCompare<T>(a: T, b: T): number
 export const gt: Comparator<number> = (a, b) => b > a;
 export const lt: Comparator<number> = (a, b) => b < a;
+export const eq: Comparator<number> = (a, b) => b === a;
 
 export const sortNumAsc  = compare(gt);
 export const sortNumDesc = compare(lt);
