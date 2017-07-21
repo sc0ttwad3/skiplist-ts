@@ -6,7 +6,7 @@ export const truthy  = (x: any): boolean => (x !== false) && existy(x);
 export const logBase = (n: number, base: number): number => Math.log(n) / Math.log(base);
 
 // An element of the SkipList data-structure
-class Node {
+export class Node {
   key: number;
   value: any;
   next: any;
@@ -20,7 +20,7 @@ class Node {
   }
 }
 
-export default class SkipList {
+export class SkipList {
   static MAX_LEVEL: number = Math.round(logBase(2 ** 32, 2));
 
   head: Node;
