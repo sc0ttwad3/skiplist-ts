@@ -1,9 +1,9 @@
-const SkipList = require('./lib/SkipList');
+import {SkipList} from './lib/SkipList'
 
 //
 // required environment variables
 [
-  'NODE_ENV'
+  'NODE_ENV',
   // , 'PORT'
 ].forEach((name) => {
   if (!process.env[name]) {
@@ -15,16 +15,16 @@ const SkipList = require('./lib/SkipList');
 const config = {
   env: process.env.NODE_ENV,
   logger: {
+    enabled: process.env.BOOLEAN ? process.env.BOOLEAN.toLowerCase() === 'true' : false,
     level: process.env.LOG_LEVEL || 'info',
-    enabled: process.env.BOOLEAN ? process.env.BOOLEAN.toLowerCase() === 'true' : false
   },
   server: {
-    port: Number(process.env.PORT)
-  }
+    port: Number(process.env.PORT),
+  },
   // ...
 }
 
 module.exports = {
-  SkipList: SkipList,
-  config: config,
+  SkipList,
+  config,
 };

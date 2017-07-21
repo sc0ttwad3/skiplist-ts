@@ -2,8 +2,9 @@
   "name": "skiplist-ts",
   "version": "0.0.2",
   "description": "A fast SkipList with advanced features implemented in Typescript",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "lib/index",
+  "types": "lib/index",
+  "module": "lib/index",
   "scripts": {
     "clean": "shx rm -rf ./lib",
     "lint": "tslint src/**/*.ts",
@@ -25,6 +26,7 @@
     "jest": "^20.0.4",
     "shx": "^0.2.2",
     "ts-jest": "^20.0.7",
+    "ts-node": "^3.2.1",
     "tslint": "^5.5.0",
     "typescript": "^2.4.2"
   },
@@ -40,5 +42,17 @@
       "js",
       "json"
     ]
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc0ttwad3/skiplist-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sc0ttwad3/skiplist-ts/issues"
+  },
+  "homepage": "https://github.com/sc0ttwad3/skiplist-ts#readme"
 }

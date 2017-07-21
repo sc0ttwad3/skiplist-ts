@@ -3,8 +3,9 @@
     "module": "commonjs",   // Node module
     "target": "ESNEXT",
     "noImplicitAny": false,
-    "outDir": "./lib",
-    "rootDir": "./src",
+    "outDir": "lib",
+    "rootDir": ".",
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "pretty": true,
@@ -17,7 +18,8 @@
         "*",
         "src/*"
       ]
-    }
+    },
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "src/**/*.ts"
