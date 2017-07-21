@@ -128,6 +128,24 @@ export class SkipList {
     }
   }
 
+  toArray(): any[] {
+    return this.kvps;
+  }
+
+  // Need to better Type this function
+  // among other issues
+  get kvps(): any[] {
+    let current: Node = this.head.next[0];
+    const arr = [];
+    while (current !== this.tail) {
+      const k = current.key;
+      const v = current.value;
+      arr.push({key: k, value: v});
+      current = current.next[0];
+    }
+    return arr;
+  }
+
   clear() {
     this.head = new Node(
       Number.MIN_SAFE_INTEGER,

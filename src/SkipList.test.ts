@@ -1,6 +1,6 @@
 import {} from 'jest';
 import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt} from './common';
-import { logBase, SkipList } from './SkipList';
+import { logBase, Node, SkipList } from './SkipList';
 
 describe('create SkipList', () => {
   let list: SkipList;

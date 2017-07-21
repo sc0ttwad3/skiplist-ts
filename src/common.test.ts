@@ -1,9 +1,17 @@
 import {} from 'jest';
-import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt} from './common';
-import {logBase} from './SkipList';
-import SkipList from './SkipList';
+import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt, reverse} from './common';
+import {logBase, Node, SkipList} from './SkipList';
 
 describe('verify common types and functions', () => {
+  let list: SkipList;
+
+  beforeEach(() => {
+    list = new SkipList(2 ** 6);
+  });
+
+  afterEach(() => {
+    list = null;
+  })
 
   it('isFunc function', () => {
     const t = (x) => x;
@@ -34,5 +42,26 @@ describe('verify common types and functions', () => {
     expect(lt(2, 1)).toBeTruthy();
     expect(lt(1, 2)).toBeFalsy();
     expect(lt(2, 2)).toBeFalsy();
+  })
+
+  it('can reverse items in array', () => {
+    list.add(10, 'Ammie');
+    list.add(-73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(-610, 'Carrie');
+    const arr = list.toArray();
+    const revArr = reverse(arr);
+    expect(arr).toEqual(expect.arrayContaining(
+      [ { key: -610, value: 'Carrie' },
+      { key: -73, value: 'Caine' },
+      { key: 8, value: 'Becky' },
+      { key: 10, value: 'Ammie' } ],
+    ));
+    expect(revArr).toEqual(expect.arrayContaining(
+      [ { key: 10, value: 'Ammie' },
+      { key: 8, value: 'Becky' },
+      { key: -73, value: 'Caine' },
+      { key: -610, value: 'Carrie' } ],
+    ))
   })
 });

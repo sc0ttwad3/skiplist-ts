@@ -26,3 +26,13 @@ export const lt: Comparator<number> = (a, b) => b < a;
 
 export const sortNumAsc  = compare(gt);
 export const sortNumDesc = compare(lt);
+
+// Need to limit Types to Nodes?
+  //
+export function reverse<T>(items: T[]): T[] {
+  const toreturn = [];
+  for (let i = items.length - 1; i >= 0; i--) {
+      toreturn.push(items[i]);
+  }
+  return toreturn;
+}
