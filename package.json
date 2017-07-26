@@ -20,13 +20,13 @@
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^20.0.4",
-    "@types/node": "^8.0.14",
+    "@types/jest": "^20.0.5",
+    "@types/node": "^8.0.17",
     "chalk": "^2.0.1",
     "jest": "^20.0.4",
     "shx": "^0.2.2",
     "ts-jest": "^20.0.7",
-    "ts-node": "^3.2.1",
+    "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
     "typescript": "^2.4.2"
   },

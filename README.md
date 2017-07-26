@@ -18,6 +18,8 @@ Here you should say what actually happens when you execute the code above.
 
 ## Developing
 
+I think using Gulp might be better than the current npm scripts. See [Using Gulp]((http://blog.scottlogic.com/2015/12/24/creating-an-angular-2-build.html)
+
 ### Built With
 List main libraries, frameworks used including versions (React, Angular etc...)
 
