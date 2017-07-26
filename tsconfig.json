@@ -4,7 +4,7 @@
     "target": "ESNEXT",
     "noImplicitAny": false,
     "outDir": "lib",
-    "rootDir": ".",
+    "rootDir": "src",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

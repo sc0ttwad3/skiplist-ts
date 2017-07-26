@@ -5,6 +5,7 @@
   "defaultSeverity": "warning",
   "jsRules:": {},
   "rules": {
+    "arrow-parens": false,
     "no-constant-condition": false,
     "quotemark": [
       false
