@@ -92,6 +92,33 @@ describe('create SkipList', () => {
     expect(isFunc(list[Symbol.iterator])).toBeTruthy();
   })
 
+  it('is iterable - can be consumed by Array.from() expressions', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+
+    // expect(isFunc(list[Symbol.iterator])).toBeTruthy();
+  })
+
+  it('is iterable - can be consumed by destructuring operator', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+
+    // expect(isFunc(list[Symbol.iterator])).toBeTruthy();
+  })
+
+  it('is iterable - can be consumed by yield* expressions', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+
+    // expect(isFunc(list[Symbol.iterator])).toBeTruthy();
+  })
+
   it('is iterable - mapping over node keys', () => {
     list.add(10, 'Ammie');
     list.add(73, 'Caine');
