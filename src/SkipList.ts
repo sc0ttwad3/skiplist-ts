@@ -128,6 +128,48 @@ export class SkipList {
     }
   }
 
+  // This symbol is NOT an Iterator,
+  // Method that RETURNS an ITERATOR
+  [Symbol.iterator](): Iterator<Node> {
+    let walker: Node = this.head;
+    const iterator = {
+      next(): IteratorResult<Node> {
+        if (walker.next[0].key !== Number.MAX_SAFE_INTEGER) {
+          walker = walker.next[0];
+          return {
+            done: false,
+            value: walker,
+          }
+        } else {
+          return {
+            done: true,
+            value: undefined,
+          }
+        }
+      },
+      throw(e): IteratorResult<Node> {
+        return {
+          done: true,
+          value: e,
+        }
+      },
+      // can be used to dispose of resources that the
+      // iterator may be holding when closed early.
+      return(): IteratorResult<Node> {
+        return {
+          done: true,
+          value: null,
+        }
+      },
+      // Iterable Iterator
+      [Symbol.iterator]() {
+        return this;
+      },
+    };
+    return iterator;
+  }
+
+  /* ------------------------------------------ */
   toArray(): any[] {
     return this.kvps;
   }
@@ -170,8 +212,6 @@ export class SkipList {
     return this.numNodes - 2;
   }
 
-  //
-  //
   private _randomLevel(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }

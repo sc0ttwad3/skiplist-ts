@@ -81,13 +81,48 @@ describe('create SkipList', () => {
     expect(list.size).toEqual(0);
   });
 
-  it.skip('is iterable - can (for..of)', () => {
+/* Tests for Built-ins that consume iterables */
+
+  it('is iterable - can be consumed by for..of expressions', () => {
     list.add(10, 'Ammie');
     list.add(73, 'Caine');
     list.add(8, 'Becky');
     list.add(610, 'Carrie');
 
     expect(isFunc(list[Symbol.iterator])).toBeTruthy();
+  })
+
+  it('is iterable - mapping over node keys', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+
+    const refArr = list.kvps;
+    const arr = [];
+
+    for (const node of list) {
+      const obj = { key: node.key, value: node.value };
+      arr.push(obj);
+    }
+
+    expect(arr).toEqual(refArr);
+  })
+
+  it.skip('is iterable - mapping over node values', () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+    // NEED TEST
+  })
+
+  it('is iterable - mapping over nodes' , () => {
+    list.add(10, 'Ammie');
+    list.add(73, 'Caine');
+    list.add(8, 'Becky');
+    list.add(610, 'Carrie');
+    // NEED TEST
   })
 
 });
