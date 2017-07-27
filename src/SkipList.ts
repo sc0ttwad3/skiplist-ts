@@ -161,19 +161,17 @@ export class SkipList {
           value: null,
         }
       },
-      // Iterable Iterator
-      [Symbol.iterator]() {
-        return this;
-      },
     };
     return iterator;
   }
 
   /* ------------------------------------------ */
   toArray(): any[] {
-    return this.kvps;
+    return Array.from(this);
+    // return this.kvps;
   }
 
+  /*
   // Need to better Type this function
   // among other issues
   get kvps(): any[] {
@@ -187,6 +185,7 @@ export class SkipList {
     }
     return arr;
   }
+  */
 
   clear() {
     this.head = new Node(

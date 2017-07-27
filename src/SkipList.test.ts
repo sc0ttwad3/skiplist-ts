@@ -125,15 +125,13 @@ describe('create SkipList', () => {
     list.add(8, 'Becky');
     list.add(610, 'Carrie');
 
-    const refArr = list.kvps;
+    const refArr = list.toArray();
     const arr = [];
-
     for (const node of list) {
-      const obj = { key: node.key, value: node.value };
-      arr.push(obj);
+      arr.push(node);
     }
 
-    expect(arr).toEqual(refArr);
+    expect(refArr).toEqual(arr);
   })
 
   it.skip('is iterable - mapping over node values', () => {
