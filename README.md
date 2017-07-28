@@ -1,6 +1,7 @@
 ![Logo of the project](./images/logo.sample.png)
 
 # skiplist-ts
+
 > Additional information or tag line
 
 A brief description of your project, what it is used for.
@@ -21,11 +22,12 @@ Here you should say what actually happens when you execute the code above.
 I think using Gulp might be better than the current npm scripts. See [Using Gulp]((http://blog.scottlogic.com/2015/12/24/creating-an-angular-2-build.html)
 
 ### Built With
+
 List main libraries, frameworks used including versions (React, Angular etc...)
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
+What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
 ### Setting up Dev
 
@@ -42,20 +44,41 @@ And state what happens step-by-step. If there is any virtual environment, local 
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
-```shell
-./configure
-make
-make install
-```
-
 Here again you should state what actually happens when the code above gets
 executed.
 
+### Debugging
+
+To debug the project using the node inspection protocol, execute:
+
+```shell
+node --inspect --debug-brk lib\your-file.js
+```
+
+#### Visual Studio Code Debug Configuration
+
+Your **.vscode\launch.json** should contain a configuration for the node inspection protocol (**outFiles** assume **/lib** in this example):
+
+```shell
+"configurations": [
+
+  {
+    "type": "node",
+    "request": "attach",
+    "name": "Attach (Inspector Protocol)",
+    "port": 9229,
+    "protocol": "inspector",
+    //"diagnosticLogging": true,
+    "outFiles": ["${workspaceRoot}/lib/**/*.js"]
+  }
+]
+```
+
+Then simply click on the **Start Debugging** button.
+
 ### Deploying / Publishing
-give instructions on how to build and release a new version
+
+Give instructions on how to build and release a new version
 In case there's some step you have to take that publishes this project to a
 server, this is the right time to state it.
 
