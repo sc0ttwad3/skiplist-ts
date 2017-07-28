@@ -37,3 +37,15 @@ export function reverse<T>(items: T[]): T[] {
   }
   return toreturn;
 }
+
+/*
+  Need comparators for smallest Int and largest Int --
+  to possible remove the sentinel nodes from the list itself!
+
+  https://github.com/bevacqua/es6#number
+  look into use Number.isSafeInteger instead?
+
+  largerThanSmallestSentinelNode
+  smallerThanLargestSentinelNode
+
+*/

@@ -30,6 +30,7 @@ console.log(chalk.bold.blue('\nRemoved node (610) ...'));
 console.log(`Size: ${slist.size}`)
 console.log('\n');
 
+
 console.log(chalk.green.bold('\nLarger SkipList of 10000 nodes ( random keys between 0 and 9999...'));
 
 const genRndIntArray = () => {
@@ -184,3 +185,9 @@ const [x, y, ...z] = slist;
 console.log(`x.value: ${x.value}`)
 console.log(`y.key: ${y.key}`)
 console.log(`z: ${z[0].key}`)
+
+console.log(chalk.blue('\nSearch for key 2112 ...'));
+console.log(slist.search(2112));
+
+console.log(chalk.blue('\nFind the key 999 ...'));
+console.log(slist.search(999));

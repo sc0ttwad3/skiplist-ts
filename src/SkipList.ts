@@ -109,6 +109,27 @@ export class SkipList {
     return lFound;
   }
 
+  search(key: number, priors: Node[] = [], afters: Node[] = []): Node {
+    let lFound: number = -1;
+    let prior: Node = this.head;
+    let level: number = this.maxLevels;
+    for (; level >= 0; level--) {
+      let current: Node = prior.next[level];
+      while (current.key < key) {
+        prior = current;
+        current = prior.next[level];
+      }
+      if (key === current.key && lFound === -1) {
+        lFound = level;
+        return current;
+      }
+      priors[level] = prior;
+      afters[level] = current;
+    }
+    return undefined;
+    // return lFound;
+  }
+
   remove(key: number): boolean {
     const bottomLevel: number = 0;
     const priors: Node[] = new Array(this.maxLevels + 1);
