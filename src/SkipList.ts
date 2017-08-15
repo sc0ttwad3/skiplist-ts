@@ -1,6 +1,5 @@
 import {Comparator, Compare, Comparison, gt, isFunc, isString, isUndef, lt} from './common';
 
-/* existy(x) - define the existence of something and not null or undefined */
 export const existy  = (x: any): boolean => x != null;
 export const truthy  = (x: any): boolean => (x !== false) && existy(x);
 export const logBase = (n: number, base: number): number => Math.log(n) / Math.log(base);
@@ -20,7 +19,7 @@ export class Node {
   }
 }
 
-export class SkipList {
+export class SkipList implements Iterable<Node> {
   static MAX_LEVEL: number = Math.round(logBase(2 ** 32, 2));
 
   head: Node;
@@ -28,6 +27,9 @@ export class SkipList {
   maxLevels: number;
   numNodes: number;
 
+  // Need to accept arrays of kvp objects
+  // how to handle size determination?
+  //
   constructor(max: number = 2 ** 10) {
     if (existy(max)) {
       SkipList.MAX_LEVEL = Math.round(logBase(max, 2));

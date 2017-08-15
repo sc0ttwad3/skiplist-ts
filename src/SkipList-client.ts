@@ -187,7 +187,7 @@ console.log(`y.key: ${y.key}`)
 console.log(`z: ${z[0].key}`)
 
 console.log(chalk.blue('\nSearch for key 2112 ...'));
-console.log(slist.search(2112));
+console.log(slist.search(2112)); // return key value
 
-console.log(chalk.blue('\nFind the key 999 ...'));
-console.log(slist.search(999));
+console.log(chalk.blue('\nSearch the key 999 ...'));
+console.log(slist.search(999)); // undefined

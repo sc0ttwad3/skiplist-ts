@@ -1,5 +1,22 @@
 /* Generic comparison associated types */
 
+/*
+  Notes:
+
+  Recommended to use == null to check for both undefined or null
+  Don't use it for root level things!!!!!
+
+  To check if a variable is defined or not at a global level,
+  use (typeof someglobal !== 'undefined')
+
+  Example:
+  if (typeof someglobal !== 'undefined') {
+    // someglobal is now safe to use
+    console.log(someglobal);
+  }
+
+*/
+
 // interface IEqualsFunction<T>
 export type Comparator<A> = (a: A, b: A) => boolean;
 // interface ICompareFunction<T>
