@@ -4,19 +4,8 @@ export const existy  = (x: any): boolean => x != null;
 export const truthy  = (x: any): boolean => (x !== false) && existy(x);
 export const logBase = (n: number, base: number): number => Math.log(n) / Math.log(base);
 
-// Diff type
-type Diff<T extends string, U extends string> = (
-  {[P in T]: P } & {[P in U]: never } & { [x: string]: never }
-)[T];
-
-// Omit type
-type Omit<T, K extends keyof T> = {[P in Diff<keyof T, K>]: T[P]};
-
-// Can do things like
-// type TCleanedUser = Omit<IUser, 'privateField1' | 'privateField2'>;
-
 // An element of the SkipList data-structure
-export class Node {
+export class Node implements INode {
   key: number;
   value: any;
   next: any;
@@ -30,8 +19,6 @@ export class Node {
   }
 }
 
-type RawNode = Omit<Node, 'next' | 'topLevel'>;
-
 export class SkipList implements Iterable<Node> {
   static MAX_LEVEL: number = Math.round(logBase(2 ** 32, 2));
 
@@ -39,6 +26,8 @@ export class SkipList implements Iterable<Node> {
   tail: Node;
   maxLevels: number;
   numNodes: number;
+
+  rawNode: RawNode;
 
   // Need to accept arrays of kvp objects
   // how to handle size determination?
