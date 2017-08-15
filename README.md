@@ -19,6 +19,11 @@ Here you should say what actually happens when you execute the code above.
 
 ## Developing
 
+### Important Research Links
+
+[Node v8.3 - V8 6.0](https://www.nearform.com/blog/node-js-is-getting-a-new-v8-with-turbofan/)
+
+
 I think using Gulp might be better than the current npm scripts. See [Using Gulp]((http://blog.scottlogic.com/2015/12/24/creating-an-angular-2-build.html)
 
 ### Built With
