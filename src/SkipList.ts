@@ -27,8 +27,6 @@ export class SkipList implements Iterable<Node> {
   maxLevels: number;
   numNodes: number;
 
-  rawNode: RawNode;
-
   // Need to accept arrays of kvp objects
   // how to handle size determination?
   //

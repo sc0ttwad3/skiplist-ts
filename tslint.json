@@ -13,6 +13,9 @@
     "one-line": [
       false
     ],
+    "object-literal-sort-keys": [
+      false
+    ],
     "no-trailing-whitespace": false,
     "no-irregular-whitespace": false,
     "semicolon": [
