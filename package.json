@@ -20,15 +20,15 @@
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^20.0.6",
-    "@types/node": "^8.0.19",
-    "chalk": "^2.0.1",
+    "@types/jest": "^20.0.7",
+    "@types/node": "^8.0.24",
+    "chalk": "^2.1.0",
     "jest": "^20.0.4",
     "shx": "^0.2.2",
     "ts-jest": "^20.0.10",
     "ts-node": "^3.3.0",
-    "tslint": "^5.0.0-dev.0",
-    "typescript": "^2.5.0-dev.20170808"
+    "tslint": "^5.6.0",
+    "typescript": "^2.6.0-dev.20170818"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
