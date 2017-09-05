@@ -15,13 +15,26 @@
     console.log(someglobal);
   }
 
+interface IEqualsFunction<T> {
+  equals(value: T): number;
+}
+
 */
 
-// interface IEqualsFunction<T>
-export type Comparator<A> = (a: A, b: A) => boolean;
-// interface ICompareFunction<T>
-export type Comparison<A> = (a: A, b: A) => number;
-export type Compare = <A>(test: Comparator<A>) => Comparison<A>;
+/*****
+ *
+ * TYPES for Comparisons
+ *
+ *
+ * There is also a NPM module
+ * https://github.com/justindoherty/ts-comparators
+ *
+ * that has more functionality for chaining, etc.
+ *
+ */
+export type Comparator<T> = (a: T, b: T) => boolean;
+export type Comparison<T> = (a: T, b: T) => number;
+export type Compare = <T>(test: Comparator<T>) => Comparison<T>;
 
 export const compare: Compare = (test) => (a, b) =>
     test(a, b) ? -1
