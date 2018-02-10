@@ -1,6 +1,6 @@
-import { logBase, Node, SkipList } from './SkipList';
 // why using require, instead of import?
-const chalk = require('chalk');
+import chalk from 'chalk' // require('chalk');
+import { logBase, Node, SkipList } from './SkipList';
 // const R = require('ramda');
 
 /***********************************************************
@@ -30,7 +30,6 @@ console.log(chalk.bold.blue('\nRemoved node (610) ...'));
 console.log(`Size: ${slist.size}`)
 console.log('\n');
 
-
 console.log(chalk.green.bold('\nLarger SkipList of 10000 nodes ( random keys between 0 and 9999...'));
 
 const genRndIntArray = () => {
@@ -49,6 +48,7 @@ console.log('Created SkipList');
 const slistBig = new SkipList(2 ** 6);
 
 console.log(chalk.bold.blue('Adding nodes...'))
+// tslint:disable-next-line:no-shadowed-variable
 dataset.forEach(x => {
   slistBig.add(x, x);
 })
@@ -61,7 +61,6 @@ if (found >= 0) {
 } else {
   console.log(chalk.red('Not found.'));
 }
-
 
 /*
 const dataArr = [1,2,3,4,5];
